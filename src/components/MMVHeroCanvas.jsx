@@ -203,8 +203,8 @@ export default function MMVHeroCanvas() {
         <div className="mmv-card-inner mmv-flip-back" style={{ pointerEvents: flipped ? 'auto' : 'none' }}>
           <div className="mmv-canvas-dots" />
           <div className="mmv-flip-back-content">
-            <span className="mmv-canvas-initials" style={{ fontSize: 'clamp(20px, 2.6vw, 26px)' }}>{back.l1}</span>
-            <span className="mmv-canvas-initials" style={{ fontSize: 'clamp(20px, 2.6vw, 26px)' }}>{back.l2}</span>
+            <span className="mmv-contact-text">{back.l1}</span>
+            <span className="mmv-contact-text mmv-contact-text--email">{back.l2}</span>
             <div className="mmv-line-accent" />
             <span className="mmv-canvas-name">Maa Mantra Ventures — Mangalore</span>
           </div>
