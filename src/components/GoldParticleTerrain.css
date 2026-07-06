@@ -1,0 +1,37 @@
+.gold-terrain-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none; /* let clicks pass through to hero content/buttons */
+  background: #050505;
+}
+
+.gold-terrain-bg canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Soft atmospheric gold haze, strongest where the terrain glow peaks
+   (center-right, lower half), fading to clean black toward the top
+   so hero text always stays readable. Pure CSS, no extra draw cost. */
+.gold-terrain-haze {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 45% at 65% 78%, rgba(212, 175, 55, 0.16), transparent 70%),
+    linear-gradient(to top, rgba(212, 175, 55, 0.05) 0%, transparent 42%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-terrain-bg canvas {
+    display: none;
+  }
+  .gold-terrain-bg {
+    background: radial-gradient(ellipse 70% 50% at 65% 85%, rgba(212, 175, 55, 0.12), transparent 70%), #050505;
+  }
+}

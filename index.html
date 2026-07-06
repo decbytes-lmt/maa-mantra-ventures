@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/mmv_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maa Mantra Ventures | Events, Ad Films & Social Media Marketing</title>
+
+    <meta name="description" content="Maa Mantra Ventures is Mangalore's event management, ad films and social media marketing agency — corporate events, weddings, brand promotions and creative campaigns." />
+    <meta name="keywords" content="event management Mangalore, ad films Mangalore, social media marketing agency, wedding planner Mangalore, corporate event management" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://maamantraventure.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Maa Mantra Ventures" />
+    <meta property="og:title" content="Maa Mantra Ventures | Events, Ad Films & Social Media Marketing" />
+    <meta property="og:description" content="Corporate events, weddings, ad films and brand promotions — crafted by Maa Mantra Ventures, Mangalore." />
+    <meta property="og:image" content="https://maamantraventure.com/mmv_logo.png" />
+    <meta property="og:url" content="https://maamantraventure.com/" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Maa Mantra Ventures | Events, Ad Films & Social Media Marketing" />
+    <meta name="twitter:description" content="Corporate events, weddings, ad films and brand promotions — crafted by Maa Mantra Ventures, Mangalore." />
+    <meta name="twitter:image" content="https://maamantraventure.com/mmv_logo.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // TEMPORARY DEBUG OVERLAY — remove once the mobile overflow bug is found.
+      // Visit the site with ?debug=1 appended to the URL to see it.
+      if (location.search.includes('debug')) {
+        window.addEventListener('load', function () {
+          setTimeout(function () {
+            var vw = window.innerWidth;
+
+            function isClipped(el) {
+              var node = el.parentElement;
+              while (node && node !== document.body) {
+                var cs = getComputedStyle(node);
+                if (cs.overflowX === 'hidden' || cs.overflowX === 'clip' || cs.overflowX === 'scroll' || cs.overflowX === 'auto') {
+                  var r = node.getBoundingClientRect();
+                  // only counts as "clipped" if the clipping box itself is on-screen
+                  if (r.left > -2 && r.right < vw + 2) return true;
+                }
+                node = node.parentElement;
+              }
+              return false;
+            }
+
+            var offenders = [];
+            document.querySelectorAll('body *').forEach(function (el) {
+              var r = el.getBoundingClientRect();
+              if ((r.right > vw + 2 || r.left < -2) && !isClipped(el)) {
+                offenders.push({
+                  tag: el.tagName,
+                  cls: (el.className && el.className.toString) ? el.className.toString().slice(0, 50) : '',
+                  left: Math.round(r.left),
+                  right: Math.round(r.right),
+                  width: Math.round(r.width),
+                });
+              }
+            });
+            offenders.sort(function (a, b) { return b.right - a.right; });
+            var box = document.createElement('div');
+            box.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:999999;background:#fff;color:#000;font:12px monospace;padding:10px;max-height:60vh;overflow:auto;white-space:pre-wrap;border-bottom:4px solid red;';
+            var lines = 'viewport width: ' + vw
+              + '\ndocument scrollWidth: ' + document.documentElement.scrollWidth
+              + '\n\n' + (offenders.length
+              ? offenders.slice(0, 10).map(function (o) {
+                  return o.tag + '.' + o.cls + '\n  left:' + o.left + ' right:' + o.right + ' width:' + o.width;
+                }).join('\n\n')
+              : 'no UNCLIPPED overflowing elements found — the wide elements are being clipped properly by an ancestor, so the leak (if any) is elsewhere, e.g. a scrollbar-width or negative-margin issue.');
+            box.textContent = lines;
+            document.body.appendChild(box);
+          }, 1500);
+        });
+      }
+    </script>
+  </body>
+</html>

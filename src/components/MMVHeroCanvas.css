@@ -1,0 +1,254 @@
+.mmv-canvas-wrap {
+  position: relative;
+  border-radius: 22px;
+  aspect-ratio: 4 / 2.85;
+  overflow: visible;
+  overflow-anchor: none;
+  contain: layout style;
+}
+
+.mmv-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+}
+
+.mmv-card-inner.mmv-flip-front,
+.mmv-card-inner.mmv-flip-back {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+  transform-origin: center center;
+}
+
+.mmv-card-inner.mmv-flip-front {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.mmv-card-inner.mmv-flip-back {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.mmv-flip-inner.mmv-flipped .mmv-card-inner.mmv-flip-front {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.mmv-flip-inner.mmv-flipped .mmv-card-inner.mmv-flip-back {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.mmv-flip-back-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 30px;
+}
+
+.mmv-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #15170f 0%, #0d0f09 50%, #060705 100%);
+  border: 1px solid rgba(214, 162, 60, 0.45);
+  box-shadow: 0 0 0 1px rgba(214, 162, 60, 0.05), 0 40px 100px -30px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease-out;
+  cursor: pointer;
+}
+
+.mmv-canvas-dots {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 27px,
+    rgba(214, 162, 60, 0.1) 28px,
+    transparent 29px
+  );
+  mask-image: linear-gradient(90deg, black 0%, transparent 22%, transparent 78%, black 100%);
+  -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 22%, transparent 78%, black 100%);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.mmv-diag {
+  position: absolute;
+  width: 220px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #f0c869, transparent);
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.mmv-diag--tl { top: 36px; left: -50px; transform: rotate(-35deg); }
+.mmv-diag--br { bottom: 36px; right: -50px; transform: rotate(-35deg); }
+
+.mmv-bracket {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 1.5px solid rgba(214, 162, 60, 0.55);
+  z-index: 2;
+}
+
+.mmv-bracket--tr {
+  top: 16px; right: 16px;
+  border-left: none; border-bottom: none;
+  border-top-right-radius: 14px;
+}
+
+.mmv-bracket--bl {
+  bottom: 16px; left: 16px;
+  border-right: none; border-top: none;
+  border-bottom-left-radius: 14px;
+}
+
+.mmv-glow-cursor {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214, 162, 60, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.mmv-mark {
+  width: 56px;
+  height: 45px;
+  z-index: 3;
+  transform: translateZ(35px);
+  filter: drop-shadow(0 0 14px rgba(214, 162, 60, 0.6));
+  transition: filter 0.3s ease;
+}
+
+.mmv-mark path {
+  fill: none;
+  stroke: #f0c869;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.mmv-diamond {
+  fill: #f0c869;
+  stroke: none;
+}
+
+.mmv-canvas-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  z-index: 3;
+  margin-top: 8px;
+  transform: translateZ(30px);
+}
+
+.mmv-canvas-initials {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(48px, 7.5vw, 72px);
+  color: #f0c869;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-shadow: 0 2px 0 #8a6320, 0 0 24px rgba(214, 162, 60, 0.6);
+  transition: text-shadow 0.3s ease;
+}
+
+.mmv-line-accent {
+  width: 70px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d6a23c, transparent);
+  margin: 14px 0 12px;
+  position: relative;
+}
+
+.mmv-line-accent::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: #f0c869;
+  box-shadow: 0 0 8px 2px rgba(240, 200, 105, 0.8);
+  transform: translate(-50%, -50%);
+}
+
+.mmv-canvas-name {
+  font-size: clamp(9px, 1.1vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: rgba(214, 162, 60, 0.65);
+  text-transform: uppercase;
+}
+
+.mmv-canvas-stage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36%;
+  background: linear-gradient(180deg, transparent 0%, rgba(214, 162, 60, 0.05) 55%, rgba(214, 162, 60, 0.14) 100%);
+  clip-path: polygon(14% 100%, 86% 100%, 70% 22%, 30% 22%);
+  border-top: 1px solid rgba(214, 162, 60, 0.18);
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.mmv-card-inner.mmv-card--active {
+  box-shadow: 0 0 0 1px rgba(214, 162, 60, 0.15), 0 50px 120px -30px rgba(0, 0, 0, 0.9), 0 0 70px -10px rgba(214, 162, 60, 0.35);
+}
+
+.mmv-card--active .mmv-mark {
+  filter: drop-shadow(0 0 22px rgba(240, 200, 105, 0.9));
+}
+
+.mmv-card--active .mmv-canvas-initials {
+  text-shadow: 0 2px 0 #8a6320, 0 0 40px rgba(240, 200, 105, 0.85);
+}
+
+.mmv-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(214, 162, 60, 0.4);
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  animation: mmvRippleAnim 0.8s ease-out forwards;
+  z-index: 1;
+}
+
+@keyframes mmvRippleAnim {
+  0% { width: 0; height: 0; opacity: 0.8; }
+  100% { width: 420px; height: 420px; opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  .mmv-mark { width: 44px; height: 35px; }
+}

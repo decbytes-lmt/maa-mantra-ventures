@@ -1,0 +1,48 @@
+.float-wa {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: #16130a;
+  padding: 13px 18px;
+  border-radius: 50px;
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px -8px rgba(214, 162, 60, 0.6);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  animation: pulseGlow 2.4s ease-in-out infinite;
+}
+
+.float-wa:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 16px 40px -8px rgba(214, 162, 60, 0.75);
+}
+
+.float-wa-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #e0483f;
+  color: #fff;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: none;
+}
+
+@media (max-width: 600px) {
+  .float-wa span:not(.float-wa-badge) {
+    display: none;
+  }
+  .float-wa {
+    padding: 14px;
+  }
+}
