@@ -5,12 +5,9 @@ import useSEO from '../hooks/useSEO';
 import '../pages/Home.css';
 import './Portfolio.css';
 
-import productAdVideo from '../assets/portfolio/product-ad-highlight.mp4';
-
 const categories = ['All', 'Events', 'Ad Films', 'Social Media', 'Product Shoots'];
 
 const projects = [
-  { title: 'Product Ad Highlight', tag: 'Ad Films', video: true, src: productAdVideo, isVideo: true },
   { title: 'Kudla Kapi Habba Coffee Corner', tag: 'Events' },
   { title: "Shiyana's 5th Birthday Celebration", tag: 'Events' },
   { title: 'Birthday Treat Counter', tag: 'Events' },
