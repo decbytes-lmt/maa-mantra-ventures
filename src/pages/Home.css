@@ -649,6 +649,131 @@ html {
 
 .client-logo:hover .client-logo-name { color: var(--gold); }
 
+.hero-stats .media-marquee {
+  margin-bottom: 24px;
+}
+
+.media-marquee-head {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.media-marquee-head h3 {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(20px, 2.6vw, 28px);
+  font-weight: 600;
+  margin: 8px 0 0;
+  color: var(--text, #fff);
+}
+
+/* PORTFOLIO MEDIA MARQUEE (auto-scroll, same behaviour as .logo-strip) */
+.media-marquee {
+  display: block;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.media-marquee-track {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  width: max-content;
+  padding: 10px 0;
+  animation: mediaScroll 130s linear infinite;
+  -webkit-animation: mediaScroll 130s linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.media-marquee-track.reverse {
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+}
+
+.media-marquee:hover .media-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes mediaScroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@-webkit-keyframes mediaScroll {
+  from { -webkit-transform: translate3d(0, 0, 0); }
+  to { -webkit-transform: translate3d(-50%, 0, 0); }
+}
+
+/* Cards size themselves to each image's own aspect ratio — height is fixed,
+   width follows the image naturally so verticals stay tall/narrow and
+   horizontals stay wide, instead of everyone being force-cropped square. */
+/* Cards size themselves to each image's own aspect ratio — height is fixed,
+   width follows the image naturally so verticals stay tall/narrow and
+   horizontals stay wide, instead of everyone being force-cropped square.
+   width: max-content + align-items: center (not stretch) is what stops the
+   card/thumb box from stretching wider than the photo and leaving a black gap. */
+.media-marquee-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 172px;
+  width: max-content;
+  flex-shrink: 0;
+}
+
+.media-marquee-thumb {
+  position: relative;
+  display: inline-flex;
+  width: max-content;
+  height: 140px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(150deg, #211c10, #0c0e0c 70%);
+  border: 1px solid rgba(214, 162, 60, 0.22);
+  box-shadow: 0 12px 26px -14px rgba(0, 0, 0, 0.65);
+  transition: border-color 0.4s var(--ease), transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.media-marquee-thumb img {
+  height: 100%;
+  width: auto;
+  max-width: 240px;
+  display: block;
+  object-fit: contain;
+}
+
+.media-marquee-card:hover .media-marquee-thumb {
+  border-color: var(--gold);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 18px 34px -14px rgba(214, 162, 60, 0.4);
+}
+
+.media-marquee-card span:last-child {
+  font-size: 12px;
+  color: var(--text-faint);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  letter-spacing: 0.01em;
+  transition: color 0.4s var(--ease);
+}
+
+.media-marquee-card:hover span:last-child { color: var(--gold); }
+
+@media (max-width: 700px) {
+  .media-marquee-track { animation-duration: 200s; }
+  .media-marquee-card { height: 128px; }
+  .media-marquee-thumb { height: 100px; }
+  .media-marquee-thumb img { max-width: 170px; }
+}
+
 /* CTA BAND */
 .cta-band {
   padding: 100px 0;
