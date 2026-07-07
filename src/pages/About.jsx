@@ -4,8 +4,8 @@ import useSEO from '../hooks/useSEO';
 import './About.css';
 
 const stats = [
-  { num: '15+', label: 'Years in Digital Marketing' },
-  { num: '2+', label: 'Years in Event Marketing' },
+  { num: '17+', label: 'Years in Digital Marketing' },
+  { num: '4+', label: 'Years in Event Marketing' },
   { num: '500+', label: 'Projects Delivered' },
   { num: '100+', label: 'Happy Clients' },
 ];
@@ -22,12 +22,13 @@ const milestones = [
   { year: '2022', title: 'Event Division Launched', desc: 'Expanded into full-scale event management and stage productions.' },
   { year: '2023', title: 'Kudla Kapi Habba', desc: 'Managed one of Mangalore\'s most celebrated cultural festivals.' },
   { year: '2024', title: '500+ Projects', desc: 'Crossed 500 successful projects across events, campaigns and productions.' },
+  { year: '2025', title: 'Portfolio Expanded', desc: 'Added weddings, baby showers, birthdays, mall activations and vehicle launches to our event lineup.' },
 ];
 
 export default function About() {
   useSEO(
     'About Us | Maa Mantra Ventures',
-    '15+ years in digital marketing, 500+ projects delivered. Learn about Maa Mantra Ventures, Mangalore\'s event and brand marketing agency.'
+    '17+ years in digital marketing, 500+ projects delivered — weddings, festivals, corporate launches and more. Learn about Maa Mantra Ventures, Mangalore\'s event and brand marketing agency.'
   );
   return (
     <div className="page-enter">
@@ -35,7 +36,7 @@ export default function About() {
         eyebrow="About Us"
         title="Mangalore's Creative"
         accent="Event & Brand Studio"
-        sub="Maa Mantra Ventures is a leading event management company based in Mangalore, known for creating impactful experiences for brands, corporates, and communities."
+        sub="Maa Mantra Ventures is a leading event management company based in Mangalore, known for creating impactful experiences across brand launches, corporate activations, weddings and personal celebrations."
       />
 
       <section className="section">
@@ -52,11 +53,13 @@ export default function About() {
               <p className="about-text">
                 Maa Mantra Ventures is a leading event management company based in Mangalore,
                 known for creating impactful experiences for brands, corporates, and communities.
-                With a proven track record of successful events like <strong style={{ color: 'var(--text)' }}>Kudla Kapi Habba</strong>,{' '}
-                <strong style={{ color: 'var(--text)' }}>Cashew Festival</strong>,{' '}
-                <strong style={{ color: 'var(--text)' }}>TVS Sai Radha Launch</strong>, and{' '}
-                <strong style={{ color: 'var(--text)' }}>Hero MotoCorp activations</strong>, we specialize in
-                delivering memorable, high-energy events that connect with audiences and build lasting impressions.
+                With a proven track record spanning cultural festivals like <strong style={{ color: 'var(--text)' }}>Kudla Kapi Habba</strong> and{' '}
+                <strong style={{ color: 'var(--text)' }}>Tengina Habba</strong>, brand launches like{' '}
+                <strong style={{ color: 'var(--text)' }}>Tanishq</strong>,{' '}
+                <strong style={{ color: 'var(--text)' }}>TVS Sai Radha</strong> and{' '}
+                <strong style={{ color: 'var(--text)' }}>MG Motor</strong>, corporate activations, mall events and conferences,
+                and personal milestones from weddings and baby showers to birthday celebrations,
+                we specialize in delivering memorable, high-energy events that connect with audiences and build lasting impressions.
               </p>
               <p className="about-text">
                 From grand stages to viral digital campaigns, our team blends event production,
