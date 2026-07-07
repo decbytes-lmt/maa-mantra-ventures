@@ -119,47 +119,6 @@ html {
   letter-spacing: 0.08em;
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  z-index: 2;
-}
-
-.scroll-mouse {
-  width: 22px;
-  height: 36px;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  padding-top: 6px;
-}
-
-.scroll-dot {
-  width: 4px;
-  height: 8px;
-  background: var(--gold);
-  border-radius: 2px;
-  animation: scrollDot 1.6s ease-in-out infinite;
-}
-
-@keyframes scrollDot {
-  0% { transform: translateY(0); opacity: 1; }
-  60% { transform: translateY(10px); opacity: 0; }
-  61% { transform: translateY(0); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
 /* SECTIONS */
 .section {
   padding: 110px 0;

@@ -51,20 +51,27 @@ export default function About() {
                 Built on Passion, <span className="accent">Proven</span> by Results
               </h2>
               <p className="about-text">
-                Maa Mantra Ventures is a leading event management company based in Mangalore,
-                known for creating impactful experiences for brands, corporates, and communities.
-                With a proven track record spanning cultural festivals like <strong style={{ color: 'var(--text)' }}>Kudla Kapi Habba</strong> and{' '}
-                <strong style={{ color: 'var(--text)' }}>Tengina Habba</strong>, brand launches like{' '}
-                <strong style={{ color: 'var(--text)' }}>Tanishq</strong>,{' '}
-                <strong style={{ color: 'var(--text)' }}>TVS Sai Radha</strong> and{' '}
-                <strong style={{ color: 'var(--text)' }}>MG Motor</strong>, corporate activations, mall events and conferences,
-                and personal milestones from weddings and baby showers to birthday celebrations,
-                we specialize in delivering memorable, high-energy events that connect with audiences and build lasting impressions.
+                Maa Mantra Ventures is a full-service creative agency specializing in advertising,
+                filmmaking, event management, and brand storytelling. Founded by the first female
+                director of the Tulu film industry, our company is backed by over 15 years of
+                experience in ad filmmaking, concept direction, theatre, production, and creative execution.
               </p>
               <p className="about-text">
-                From grand stages to viral digital campaigns, our team blends event production,
-                photography, videography, advertising and brand promotions under one roof —
-                so every project gets both creative ambition and flawless execution.
+                We transform ideas into impactful experiences through ad films, corporate videos,
+                digital campaigns, photography, videography, brand activations, and professionally
+                managed events. From corporate events and product launches to weddings, cultural
+                celebrations, and social gatherings, we bring creativity, precision, and flawless
+                execution to every occasion.
+              </p>
+              <p className="about-text">
+                With a perfect blend of artistic vision and technical expertise, we handle every
+                stage of a project — from concept development and planning to production and final
+                delivery — ensuring every detail reflects excellence.
+              </p>
+              <p className="about-text">
+                At Maa Mantra Ventures, we believe every brand and every event has a story worth
+                telling. Our mission is to create memorable experiences and meaningful connections
+                through creativity, innovation, and uncompromising quality.
               </p>
             </div>
           </Reveal>

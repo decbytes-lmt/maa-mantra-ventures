@@ -219,11 +219,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <div className="scroll-indicator">
-          <span>Scroll Down</span>
-          <div className="scroll-mouse"><div className="scroll-dot" /></div>
-        </div>
       </section>
 
       {/* WHAT WE DO */}
