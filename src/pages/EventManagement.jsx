@@ -1,4 +1,5 @@
 import ServiceDetail from './ServiceDetail';
+import { autoplayMedia, gridMedia } from '../data/eventManagementMedia';
 
 const heroIcon = (
   <svg viewBox="0 0 24 24" fill="none">
@@ -61,6 +62,8 @@ const data = {
     { title: 'Event Table Decoration' },
     { title: 'Kudla Kapi Habba Coffee Corner' },
   ],
+  mediaAutoplay: autoplayMedia,
+  mediaGrid: gridMedia,
   faqs: [
     { q: 'What kind of events do you manage?', a: 'Weddings, corporate conferences, product launches, brand activations and private celebrations.' },
     { q: 'How far in advance should we book?', a: 'We recommend 2-3 months for most events, and 6+ months for large weddings or conferences.' },
@@ -68,8 +71,10 @@ const data = {
     { q: 'Can you work within a fixed budget?', a: 'Yes — we build the entire plan around your budget and prioritize what matters most to you.' },
   ],
   otherServices: [
-    { title: 'Ad Films', path: '/services/ad-films' },
-    { title: 'Social Media Marketing', path: '/services/social-media-marketing' },
+    { title: 'Advertising Agency', path: '/services/advertising-agency' },
+    { title: 'Photography & Videography', path: '/services/ad-films' },
+    { title: 'Brand Promotions', path: '/services/social-media-marketing' },
+    { title: 'Film Production', path: '/services/film-production' },
   ],
 };
 

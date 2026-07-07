@@ -64,8 +64,10 @@ const data = {
     { q: 'Can you work with our in-house design team?', a: 'Yes, we frequently collaborate with in-house teams on strategy and execution.' },
   ],
   otherServices: [
-    { title: 'Photography & Videography', path: '/services/ad-films' },
     { title: 'Event Management', path: '/services/event-management' },
+    { title: 'Advertising Agency', path: '/services/advertising-agency' },
+    { title: 'Photography & Videography', path: '/services/ad-films' },
+    { title: 'Film Production', path: '/services/film-production' },
   ],
 };
 

@@ -69,6 +69,8 @@ const data = {
     { q: 'Can you deliver for both OTT and broadcast?', a: 'Yes, we export masters to festival, OTT and broadcast specifications.' },
   ],
   otherServices: [
+    { title: 'Event Management', path: '/services/event-management' },
+    { title: 'Advertising Agency', path: '/services/advertising-agency' },
     { title: 'Photography & Videography', path: '/services/ad-films' },
     { title: 'Brand Promotions', path: '/services/social-media-marketing' },
   ],

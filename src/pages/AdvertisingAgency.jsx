@@ -1,4 +1,5 @@
 import ServiceDetail from './ServiceDetail';
+import { autoplayMedia, gridMedia } from '../data/advertisingAgencyMedia';
 
 const heroIcon = (
   <svg viewBox="0 0 24 24" fill="none">
@@ -61,6 +62,8 @@ const data = {
     { title: 'SUN Simulation User Network Event' },
     { title: 'Snow Man Icecreams Campaign' },
   ],
+  mediaAutoplay: autoplayMedia,
+  mediaGrid: gridMedia,
   faqs: [
     { q: 'What does a full-service agency include?', a: 'Strategy, creative production and media planning/buying, all managed under one team.' },
     { q: 'Do you handle media spend and negotiation?', a: 'Yes — we plan, negotiate and manage media buys across print, digital and OOH.' },
@@ -70,6 +73,8 @@ const data = {
   otherServices: [
     { title: 'Event Management', path: '/services/event-management' },
     { title: 'Photography & Videography', path: '/services/ad-films' },
+    { title: 'Brand Promotions', path: '/services/social-media-marketing' },
+    { title: 'Film Production', path: '/services/film-production' },
   ],
 };
 

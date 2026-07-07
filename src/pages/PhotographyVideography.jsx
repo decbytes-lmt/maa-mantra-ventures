@@ -12,7 +12,7 @@ const heroIcon = (
 const data = {
   eyebrow: 'Ad Films',
   title: 'Cinematic Films That',
-  accent: 'Sell the Story',
+  accent: 'Tell the Story',
   intro:
     'From concept to final cut, we produce ad films that turn brand messages into visual experiences audiences remember — and act on.',
   heroIcon,
@@ -64,8 +64,10 @@ const data = {
     { q: 'What formats do you deliver?', a: 'We deliver vertical, square and widescreen cuts optimized for every platform you need.' },
   ],
   otherServices: [
-    { title: 'Brand Promotions', path: '/services/social-media-marketing' },
     { title: 'Event Management', path: '/services/event-management' },
+    { title: 'Advertising Agency', path: '/services/advertising-agency' },
+    { title: 'Brand Promotions', path: '/services/social-media-marketing' },
+    { title: 'Film Production', path: '/services/film-production' },
   ],
 };
 
