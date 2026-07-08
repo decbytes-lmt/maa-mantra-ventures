@@ -1,6 +1,7 @@
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import useSEO from '../hooks/useSEO';
+import founderPhoto from '../assets/founder-photo.jpg';
 import './About.css';
 
 const stats = [
@@ -42,7 +43,9 @@ export default function About() {
       <section className="section">
         <div className="container about-grid">
           <Reveal className="reveal-scale">
-            <div className="about-visual" />
+            <div className="about-visual">
+              <img src={founderPhoto} alt="Founder of Maa Mantra Ventures" />
+            </div>
           </Reveal>
           <Reveal delay={1}>
             <div>
