@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import useSEO from '../hooks/useSEO';
@@ -10,6 +10,19 @@ export default function Contact() {
     'Get in touch with Maa Mantra Ventures for event management, ad films and social media marketing services in Mangalore.'
   );
   const [sent, setSent] = useState(false);
+  const formRef = useRef(null);
+
+  // bfcache guard: if user hits back after submit, wipe any restored values
+  useEffect(() => {
+    const clearOnRestore = (e) => {
+      if (e.persisted && formRef.current) {
+        formRef.current.reset();
+        setSent(false);
+      }
+    };
+    window.addEventListener('pageshow', clearOnRestore);
+    return () => window.removeEventListener('pageshow', clearOnRestore);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +35,7 @@ export default function Contact() {
       `Interested in: ${f.service.value}\n` +
       `Message: ${f.message.value}`;
     setSent(true);
+    f.reset();
     window.location.href = `https://wa.me/918904011860?text=${encodeURIComponent(text)}`;
   };
 
@@ -52,7 +66,7 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay={1}>
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
                   <label>Full Name</label>
