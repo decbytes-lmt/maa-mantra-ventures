@@ -40,9 +40,9 @@ export default function Footer() {
 
         <div className="footer-col">
           <h4>Contact Info</h4>
-          <a href="tel:+918904011860" className="footer-contact-line"><Icon name="phone" /> 890 401 1860</a>
+          <a href="tel:+918904011860" className="footer-contact-line"><Icon name="phone" /> +91 890 401 1860</a>
           <a href="mailto:maamantraventures@gmail.com" className="footer-contact-line"><Icon name="mail" /> maamantraventures@gmail.com</a>
-          <span className="footer-contact-line"><Icon name="pin" /> Shop No#8 Yenepoya Mall, Mallikatte, Kadri Road, Mangaluru 575003</span>
+          <span className="footer-contact-line"><Icon name="pin" /> Maa Mantra Ventures, Shop No#8 Yenepoya Mall, Mallikatte, Kadri Road, Mangaluru 575003</span>
           <a href="https://wa.me/918904011860" target="_blank" rel="noreferrer" className="btn btn-primary footer-whatsapp">
             Chat on WhatsApp <Icon name="whatsapp" />
           </a>

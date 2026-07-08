@@ -29,9 +29,9 @@ export default function Contact() {
         <div className="container contact-grid">
           <Reveal>
             <div className="contact-info">
-              <ContactCard icon="phone" label="Call Us" value="890 401 1860" href="tel:+918904011860" />
+              <ContactCard icon="phone" label="Call Us" value="+91 890 401 1860" href="tel:+918904011860" />
               <ContactCard icon="mail" label="Email Us" value="maamantraventures@gmail.com" href="mailto:maamantraventures@gmail.com" />
-              <ContactCard icon="pin" label="Visit Us" value="Shop No#8 Yenepoya Mall, Mallikatte, Kadri Road, Mangaluru, Karnataka 575003" />
+              <ContactCard icon="pin" label="Visit Us" value="Maa Mantra Ventures, Shop No#8 Yenepoya Mall, Mallikatte, Kadri Road, Mangaluru, Karnataka 575003" />
               <ContactCard icon="instagram" label="Instagram" value="@maamantraventures" href="https://instagram.com/maamantraventures" />
               <div className="contact-social-row">
                 <a href="https://instagram.com/maamantraventures" target="_blank" rel="noreferrer" aria-label="Instagram" className="contact-social"><Icon name="instagram" /></a>
