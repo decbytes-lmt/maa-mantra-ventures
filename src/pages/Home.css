@@ -444,7 +444,7 @@ html {
 /* TESTIMONIAL STICKY STACK */
 .testimonial-stack {
   position: relative;
-  max-width: 760px;
+  max-width: 640px;
   margin: 40px auto 90px;
   padding-bottom: 40px;
 }
@@ -461,7 +461,7 @@ html {
   text-decoration: none;
   color: var(--text);
   margin-bottom: 26px;
-  min-height: 620px;
+  min-height: 460px;
   box-shadow: 0 30px 60px -26px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease);
   will-change: transform;
@@ -483,7 +483,7 @@ html {
 }
 
 .testimonial-stack-body {
-  padding: 44px 36px 50px;
+  padding: 32px 28px 40px;
 }
 
 .testimonial-stack-body .quote-mark {
@@ -491,16 +491,13 @@ html {
 }
 
 .testimonial-stack-body p {
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.75;
   color: var(--text-muted);
 }
 
-.testimonial-stack .testimonial-person strong { font-size: 16px; }
-.testimonial-stack .testimonial-person span { font-size: 14px; }
-
 @media (max-width: 700px) {
-  .testimonial-stack-card { min-height: 380px; }
+  .testimonial-stack-card { min-height: 260px; }
   .testimonial-stack-header { padding: 16px 20px; }
   .testimonial-stack-body { padding: 24px 20px 30px; }
 }
@@ -731,9 +728,9 @@ html {
 
 @media (max-width: 700px) {
   .media-marquee-track { animation-duration: 200s; }
-  .media-marquee-card { height: 128px; }
-  .media-marquee-thumb { height: 100px; }
-  .media-marquee-thumb img { max-width: 170px; }
+  .media-marquee-card { height: 200px; }
+  .media-marquee-thumb { height: 160px; }
+  .media-marquee-thumb img { max-width: 260px; }
 }
 
 /* CTA BAND */
