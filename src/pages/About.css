@@ -148,11 +148,13 @@
   .about-grid { grid-template-columns: 1fr; }
   .about-stats, .about-values-grid { grid-template-columns: repeat(2, 1fr); }
   .about-timeline { padding-left: 100px; }
-  .about-timeline-year { left: -100px; width: 60px; font-size: 22px; }
+  .about-timeline-year { left: -100px; width: 55px; font-size: 22px; }
+  .about-timeline-dot { left: -30px; }
 }
 
 @media (max-width: 560px) {
   .about-stats, .about-values-grid { grid-template-columns: 1fr; }
-  .about-timeline { padding-left: 80px; }
-  .about-timeline-year { left: -78px; width: 56px; font-size: 20px; }
+  .about-timeline { padding-left: 90px; }
+  .about-timeline-year { left: -90px; width: 50px; font-size: 20px; }
+  .about-timeline-dot { left: -28px; }
 }
