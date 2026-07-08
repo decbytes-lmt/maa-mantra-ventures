@@ -83,13 +83,13 @@
 
 .about-timeline-year {
   position: absolute;
-  left: -130px;
-  top: 28px;
+  left: -150px;
+  top: 18px;
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 34px;
   font-weight: 700;
   color: var(--gold);
-  width: 60px;
+  width: 80px;
   text-align: right;
 }
 
@@ -148,11 +148,11 @@
   .about-grid { grid-template-columns: 1fr; }
   .about-stats, .about-values-grid { grid-template-columns: repeat(2, 1fr); }
   .about-timeline { padding-left: 100px; }
-  .about-timeline-year { left: -100px; width: 50px; font-size: 16px; }
+  .about-timeline-year { left: -100px; width: 60px; font-size: 22px; }
 }
 
 @media (max-width: 560px) {
   .about-stats, .about-values-grid { grid-template-columns: 1fr; }
   .about-timeline { padding-left: 80px; }
-  .about-timeline-year { left: -80px; width: 46px; font-size: 15px; }
+  .about-timeline-year { left: -78px; width: 56px; font-size: 20px; }
 }

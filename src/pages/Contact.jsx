@@ -13,7 +13,16 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const f = e.target;
+    const text =
+      `New enquiry from website:\n` +
+      `Name: ${f.fullName.value}\n` +
+      `Email: ${f.email.value}\n` +
+      `Phone: ${f.phone.value}\n` +
+      `Interested in: ${f.service.value}\n` +
+      `Message: ${f.message.value}`;
     setSent(true);
+    window.location.href = `https://wa.me/918904011860?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -32,12 +41,12 @@ export default function Contact() {
               <ContactCard icon="phone" label="Call Us" value="+91 890 401 1860" href="tel:+918904011860" />
               <ContactCard icon="mail" label="Email Us" value="maamantraventures@gmail.com" href="mailto:maamantraventures@gmail.com" />
               <ContactCard icon="pin" label="Visit Us" value="Maa Mantra Ventures, Shop No#8 Yenepoya Mall, Mallikatte, Kadri Road, Mangaluru, Karnataka 575003" />
-              <ContactCard icon="instagram" label="Instagram" value="@maamantraventures" href="https://instagram.com/maamantraventures" />
+              <ContactCard icon="instagram" label="Follow Us" value="@maamantraventures" href="https://instagram.com/maamantraventures" />
               <div className="contact-social-row">
                 <a href="https://instagram.com/maamantraventures" target="_blank" rel="noreferrer" aria-label="Instagram" className="contact-social"><Icon name="instagram" /></a>
                 <a href="https://www.facebook.com/share/14hi9WYtyP1/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook" className="contact-social"><Icon name="facebook" /></a>
                 <a href="https://www.youtube.com/@MaaMantraventures" target="_blank" rel="noreferrer" aria-label="YouTube" className="contact-social"><Icon name="youtube" /></a>
-                <a href="#" aria-label="LinkedIn" className="contact-social"><Icon name="linkedin" /></a>
+                <a href="https://www.linkedin.com/company/maa-mantra-ventures/?fullpage=1" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="contact-social"><Icon name="linkedin" /></a>
               </div>
             </div>
           </Reveal>
@@ -47,21 +56,21 @@ export default function Contact() {
               <div className="form-row">
                 <div className="form-group">
                   <label>Full Name</label>
-                  <input type="text" placeholder="Your name" required />
+                  <input type="text" name="fullName" placeholder="Your name" required />
                 </div>
                 <div className="form-group">
                   <label>Email</label>
-                  <input type="email" placeholder="you@email.com" required />
+                  <input type="email" name="email" placeholder="you@email.com" required />
                 </div>
               </div>
               <div className="form-row">
                 <div className="form-group">
                   <label>Phone</label>
-                  <input type="tel" placeholder="+91 00000 00000" />
+                  <input type="tel" name="phone" placeholder="+91 00000 00000" />
                 </div>
                 <div className="form-group">
                   <label>I'm interested in</label>
-                  <select required defaultValue="">
+                  <select required name="service" defaultValue="">
                     <option value="" disabled>Select a service</option>
                     <option>Event Management</option>
                     <option>Stage & Show Management</option>
@@ -74,7 +83,7 @@ export default function Contact() {
               </div>
               <div className="form-group">
                 <label>Tell us about your project</label>
-                <textarea rows="5" placeholder="Share a few details — event type, date, expected guests..." required></textarea>
+                <textarea rows="5" name="message" placeholder="Share a few details — event type, date, expected guests..." required></textarea>
               </div>
               <button type="submit" className="btn btn-primary">
                 {sent ? 'Message Sent ✓' : 'Send Message'}

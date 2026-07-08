@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="footer-social">
             <a href="https://instagram.com/maamantraventures" target="_blank" rel="noreferrer" aria-label="Instagram"><Icon name="instagram" /></a>
             <a href="https://www.facebook.com/share/14hi9WYtyP1/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook"><Icon name="facebook" /></a>
-            <a href="#" aria-label="LinkedIn"><Icon name="linkedin" /></a>
+            <a href="https://www.linkedin.com/company/maa-mantra-ventures/?fullpage=1" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Icon name="linkedin" /></a>
             <a href="https://www.youtube.com/@MaaMantraventures" target="_blank" rel="noreferrer" aria-label="YouTube"><Icon name="youtube" /></a>
           </div>
         </div>
