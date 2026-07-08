@@ -728,9 +728,10 @@ html {
 
 @media (max-width: 700px) {
   .media-marquee-track { animation-duration: 200s; }
-  .media-marquee-card { height: 200px; }
-  .media-marquee-thumb { height: 160px; }
-  .media-marquee-thumb img { max-width: 260px; }
+  .media-marquee-card { height: 280px; }
+  .media-marquee-thumb { height: 230px; }
+  .media-marquee-thumb img { max-width: 340px; }
+  .media-marquee-card span:last-child { font-size: 17px; max-width: 340px; }
 }
 
 /* CTA BAND */
