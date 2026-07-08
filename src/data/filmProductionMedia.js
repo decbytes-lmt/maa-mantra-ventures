@@ -1,30 +1,21 @@
 // Root folder items  -> gridMedia (click-to-play)
 // auto_play_video/*  -> autoplayMedia (plays on load, top of page)
 //
-// IMAGES: auto-discovered from disk (src/assets/advertising agency/**). Drop files
-//   in that folder (any name) and they show up automatically — no code change needed.
 // VIDEOS: built directly from the YOUTUBE_LIST below — NOT tied to any local file,
 //   same approach as brandPromotionsMedia.js / photographyMedia.js.
+// IMAGES: auto-discovered from disk (src/assets/film production/**) if that folder
+//   is ever added — safe to leave even if the folder doesn't exist yet.
 
 import { titleFromFilename } from '../utils/titleFromFilename';
 
-// ---- Every video, title -> YouTube link (from Adversting_agency_video_link.txt) ----
+// ---- Every video, title -> YouTube link (from Film_production.txt) ----
 const YOUTUBE_LIST = [
-  ['fiza nexus abhish', 'https://youtube.com/shorts/D0oh-GdMeVM'],
-  ['grand inauguation ceremony snowman', 'https://youtube.com/shorts/qBxAetWQ1Ig'],
-  ['tanishq varamahalaks', 'https://youtube.com/shorts/MySfCoIIC0M'],
-  ['rohan corporation', 'https://youtu.be/oaHCfhY6JKU'],
-  ['ask broadband services', 'https://youtu.be/MwIyWcCtZg8'],
-  ['seasons fresh super market', 'https://youtu.be/LNPS9Oue6D4'],
-  ['snowman strawberry', 'https://youtube.com/shorts/h0nv0xGH0rw'],
-  ['blue berries snow man', 'https://youtube.com/shorts/R9K1t4qjIT8'],
-  ['tanishq diamond', 'https://youtube.com/shorts/UI8lC7Fqqwo'],
-  ['snow man opening', 'https://youtube.com/shorts/3gtDo9PwS1o'],
-  ['snowman launching', 'https://youtube.com/shorts/j5pzwhgE-ys'],
-  ['snowman opening', 'https://youtube.com/shorts/c8FAfQtqukI'],
-  ['caratlane mangalore', 'https://youtube.com/shorts/1dbGM_jIE3w?si=mb1eEqR71V9qqPja'],
-  ['shridhar bplus', 'https://youtu.be/QtgtiM-SpWw?si=3gNT3zttDspDKNbG'],
-  ['hero west coast destiny tvc ad', 'https://youtu.be/jAgonuHV6lY?si=EZsya4BQSAhkMDm9'],
+  ['namma kudla tulu movie trailer', 'https://youtu.be/9Tx7JJWkxXs?si=ff44ONf2rP-7TTCI'],
+  ['namma kudla tulu film love sequence', 'https://youtu.be/up1-s1cmPPc?si=qaGHRT1VX-pFoJ_y'],
+  ['kushi films rajivi & family', 'https://youtu.be/67uleoIsjfc?si=vHZwgtq5h-wEkOXh'],
+  ['kushi films episode6 appi ajji story', 'https://youtu.be/jh0wo1Nlxgk?si=xUaXKR0nVeAT1Y1C'],
+  ['namma kudla tulu movie uattara korpana video song', 'https://youtu.be/ftOoO2N3rZ0?si=7RiE-dFC302LuL5v'],
+  ['namma kudla tulu movie first look trailer', 'https://youtu.be/B4q7ZRHneHw?si=GlPp3PTimsmqThAC'],
 ];
 
 // Which titles above belong in the autoplay row at top of page.
@@ -81,8 +72,9 @@ YOUTUBE_LIST.forEach(([rawTitle, url], i) => {
   else gridMedia.push(item);
 });
 
-// 2. Images (and any leftover local video not covered above) — auto-discovered from disk.
-const modules = import.meta.glob('/src/assets/advertising agency/**/*.{jpg,jpeg,png,webp,mp4,mov,JPG,JPEG,PNG,MP4}', {
+// 2. Images (and any leftover local video not covered above) — auto-discovered from disk,
+//    if a `src/assets/film production/` folder is ever added. Safe no-op until then.
+const modules = import.meta.glob('/src/assets/film production/**/*.{jpg,jpeg,png,webp,mp4,mov,JPG,JPEG,PNG,MP4}', {
   eager: true,
   import: 'default',
 });

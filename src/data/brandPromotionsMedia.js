@@ -31,6 +31,10 @@ const YOUTUBE_LIST = [
   ['gl acharya', 'https://youtu.be/fwKTJXuRYZo?si=5NeggVq9KvUJbVwP'],
   ['rohan corporation', 'https://youtu.be/A7KvXUvViLY?si=9QjG7UtKGfAHg0NL'],
   ['seasons fresh super market', 'https://youtu.be/bf5DIjnapTM?si=Rxi2gyq2Xj-BrDyb'],
+  ['prakasha motors davangere', 'https://youtube.com/shorts/uTrGTiVrD_g?si=rANgc4sOOJXZxec6'],
+  ['hero west coast destiny tvc ad', 'https://youtu.be/jAgonuHV6lY?si=EZsya4BQSAhkMDm9'],
+  ['caratlane mangalore', 'https://youtube.com/shorts/1dbGM_jIE3w?si=mb1eEqR71V9qqPja'],
+  ['shridhar bplus', 'https://youtu.be/QtgtiM-SpWw?si=3gNT3zttDspDKNbG'],
 ];
 
 // Which of the titles above belong in the autoplay row at the top of the page (confirmed

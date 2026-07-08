@@ -31,6 +31,7 @@ const YOUTUBE_LIST = [
   ['gl acharya', 'https://youtu.be/fwKTJXuRYZo?si=5NeggVq9KvUJbVwP'],
   ['ask broadband', 'https://youtu.be/2mWw3ljtDDg?si=x67zi3I-OzwwlwLG'],
   ['seasons fresh super market', 'https://youtu.be/bf5DIjnapTM?si=Rxi2gyq2Xj-BrDyb'],
+  ['luxury home interior renovation kusumanjali', 'https://youtu.be/Gesti5pO3qw?si=nxiXLtZUfOW8cGzt'],
 ];
 
 // Which of the titles above belong in the autoplay row at the top of the page.

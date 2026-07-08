@@ -47,6 +47,9 @@ const PORTFOLIO_VIDEO_IDS = [
   '6P87hA9CEoQ', // TANISHQ VARA AHALAKSHMI REEL
   'WgC-NG-nU3M', // BLUE BERRIES REel 2
   'VXnmTwnjVo8', // J+J_BABY_SHOWER
+  'JDzD8rxM6EU', // CPL 2025 Player Auction
+  'qGPdxX0uqWM', // CPL 2025 Final
+  'T28SfB6ietE', // CPL 2026
 ];
 
 function shuffle(arr) {

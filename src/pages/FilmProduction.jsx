@@ -1,4 +1,5 @@
 import ServiceDetail from './ServiceDetail';
+import { autoplayMedia, gridMedia } from '../data/filmProductionMedia';
 
 
 const heroIcon = (
@@ -62,6 +63,8 @@ const data = {
     { title: 'Statement Jewelry Film' },
     { title: 'Jewelry Collection Film' },
   ],
+  mediaAutoplay: autoplayMedia,
+  mediaGrid: gridMedia,
   faqs: [
     { q: 'What kind of films do you produce?', a: 'Brand films, documentaries, product films and cinematic campaign content.' },
     { q: 'Do you handle casting and locations?', a: 'Yes — casting, location scouting and permits are managed as part of pre-production.' },

@@ -15,6 +15,12 @@ const YOUTUBE_LIST = [
   ['j+j baby shower', 'https://youtu.be/VXnmTwnjVo8'],
   ['prakash kumpala baby shower', 'https://youtube.com/shorts/7wB2oUJoIHU'],
   ['palemr conv cnt', 'https://youtu.be/5UDHFpjQexU'],
+  ['baby shower highlights deeksha shamith bhandary', 'https://youtu.be/8hkRrTzL4uM?si=1R8muJKEmzstYNwe'],
+  ['caratlane mangalore', 'https://youtube.com/shorts/1dbGM_jIE3w?si=mb1eEqR71V9qqPja'],
+  ['the pride of coastalwood begins cpl 2026 inauguration', 'https://youtu.be/NuHqrQFChpg?si=OSymnBPq14CAwwbm'],
+  ['cpl 2025 player auction', 'https://youtu.be/JDzD8rxM6EU?si=wIVPcVckHEdSrOH_'],
+  ['cpl 2025 final', 'https://youtu.be/qGPdxX0uqWM?si=UOKlsqrCM2W4Cnbg'],
+  ['cpl 2026', 'https://youtube.com/shorts/T28SfB6ietE?si=YxYdkezhd2bZTWZX'],
 ];
 
 // Which titles above belong in the autoplay row at top of page.
