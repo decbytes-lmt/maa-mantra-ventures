@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import Reveal from '../components/Reveal';
 import MMVHeroCanvas from '../components/MMVHeroCanvas';
-import HeroWavesBg from '../components/HeroWavesBg';
+import fireIntroVideo from '../assets/fire_intro.mp4';
 import useSEO from '../hooks/useSEO';
 import './Home.css';
 
@@ -93,8 +93,8 @@ const logos = [
 
 export default function Home() {
   useSEO(
-    'Maa Mantra Ventures | Events, Ad Films & Social Media Marketing',
-    'Mangalore-based event management, ad films and social media marketing agency. Corporate events, weddings, brand promotions and creative campaigns.'
+    'Event Management in Mangalore | Maa Mantra Ventures',
+    'Maa Mantra Ventures is a Mangalore-based event management, advertising and ad film agency. Weddings, corporate events, product launches, brand promotions and creative campaigns.'
   );
   const stackCardRefs = useRef([]);
 
@@ -161,7 +161,14 @@ export default function Home() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-glow" />
-        <HeroWavesBg />
+        <video
+          className="hero-video-bg"
+          src={fireIntroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
         <div className="container hero-inner">
           <Reveal><span className="eyebrow">Maa Mantra Ventures — Mangalore</span></Reveal>
           <Reveal delay={1}>

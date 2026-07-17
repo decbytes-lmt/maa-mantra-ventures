@@ -12,6 +12,9 @@ const data = {
   eyebrow: 'Event Management',
   title: 'Events Designed to Be',
   accent: 'Unforgettable',
+  seoTitle: 'Best Event Management Company in Mangalore | Maa Mantra Ventures',
+  seoDescription:
+    'Looking for event management in Mangalore? Maa Mantra Ventures plans weddings, corporate events, product launches and celebrations across Mangaluru with 15+ years of creative expertise.',
   intro:
     'From intimate weddings to large-scale corporate conferences, we manage every detail so your event runs flawlessly — and feels effortless.',
   heroIcon,

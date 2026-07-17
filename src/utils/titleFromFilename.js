@@ -1,22 +1,23 @@
-/**
- * Turns a raw filename into a display title.
- * Strips extension, splits on _ - . , keeps ALL-CAPS words as-is (acronyms like MG, TVS, RTX),
- * Title-Cases everything else.
- *
- * "bindu_new_drink_launch_reel.mp4"      -> "Bindu New Drink Launch Reel"
- * "MG_new_car_launch_majestor.jpg"       -> "MG New Car Launch Majestor"
- * "jewellery_shoot_(1)___.jpg"           -> "Jewellery Shoot (1)"
- *
- * NOTE: files that only differ by trailing _ / - / . (e.g. "launch", "launch_", "launch__")
- * collapse to the SAME title. That's expected — see rename list in chat if you want unique captions.
- */
-export function titleFromFilename(filename) {
-  const base = filename.replace(/\.[^/.]+$/, ''); // drop extension
+// Turns a media filename (e.g. "corporate-launch-event_02.jpg" or a full
+// path like "img/wedding_stage_1.png") into a readable display title
+// (e.g. "Corporate Launch Event"). Used as a fallback whenever a media
+// item doesn't have an explicit `title` set.
+
+export function titleFromFilename(file) {
+  if (!file) return '';
+
+  const base = file
+    .split('/')
+    .pop()
+    .replace(/\.[^./]+$/, ''); // strip extension
+
   const words = base
-    .split(/[_\-.]+/)
-    .filter(Boolean)
-    .filter((w) => !/^\d+$/.test(w)); // drop standalone number tokens (e.g. rename suffixes)
+    .replace(/[-_]+/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter((w) => w && !/^\d+$/.test(w)); // drop standalone number tokens
+
   return words
-    .map((w) => (w === w.toUpperCase() ? w : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()))
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
     .join(' ');
 }

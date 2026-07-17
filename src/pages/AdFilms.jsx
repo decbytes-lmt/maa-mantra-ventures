@@ -20,6 +20,8 @@ const data = {
   eyebrow: 'Ad Films',
   title: 'Cinematic Films That',
   accent: 'Sell the Story',
+  seoTitle: 'Ad Film Production Company in Mangalore | Maa Mantra Ventures',
+  seoDescription: 'Maa Mantra Ventures produces ad films in Mangalore that turn brand messages into visual experiences audiences remember and act on.',
   intro:
     'From concept to final cut, we produce ad films that turn brand messages into visual experiences audiences remember — and act on.',
   heroIcon,

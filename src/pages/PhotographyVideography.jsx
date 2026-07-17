@@ -13,6 +13,8 @@ const data = {
   eyebrow: 'Ad Films',
   title: 'Cinematic Films That',
   accent: 'Tell the Story',
+  seoTitle: 'Photography & Videography in Mangalore | Maa Mantra Ventures',
+  seoDescription: 'Maa Mantra Ventures offers professional photography and videography services in Mangalore for events, brands and campaigns.',
   intro:
     'From concept to final cut, we produce ad films that turn brand messages into visual experiences audiences remember — and act on.',
   heroIcon,

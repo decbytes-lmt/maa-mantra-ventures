@@ -13,6 +13,8 @@ const data = {
   eyebrow: 'Film Production',
   title: 'Films Crafted to',
   accent: 'Hold the Frame',
+  seoTitle: 'Film Production Company in Mangalore | Maa Mantra Ventures',
+  seoDescription: 'Maa Mantra Ventures is a film production company in Mangalore, handling brand films, documentaries and cinematic campaigns from script to final grade.',
   intro:
     'End-to-end film production — from script and set to final grade — for brand films, documentaries and cinematic campaigns that hold an audience.',
   heroIcon,

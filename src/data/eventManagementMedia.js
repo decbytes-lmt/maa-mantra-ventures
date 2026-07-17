@@ -78,7 +78,7 @@ YOUTUBE_LIST.forEach(([rawTitle, url], i) => {
 });
 
 // 2. Images (and any leftover local video not covered above) — auto-discovered from disk.
-const modules = import.meta.glob('/src/assets/event management/**/*.{jpg,jpeg,png,webp,mp4,mov,JPG,JPEG,PNG,MP4}', {
+const modules = import.meta.glob('/src/assets/event management/**/*.{jpg,jpeg,png,webp,gif,bmp,avif,heic,heif,jfif,tif,tiff,mp4,mov,webm,JPG,JPEG,PNG,WEBP,GIF,BMP,AVIF,HEIC,HEIF,JFIF,TIF,TIFF,MP4,MOV,WEBM}', {
   eager: true,
   import: 'default',
 });
@@ -87,11 +87,12 @@ Object.keys(modules)
   .sort()
   .forEach((path) => {
     const filename = path.split('/').pop();
+    if (/(^|[^a-z0-9])copy([^a-z0-9]|$)/i.test(filename)) return; // skip duplicate '- Copy' files (handles _ - . space separators)
     const type = /\.(mp4|mov)$/i.test(filename) ? 'video' : 'image';
     if (type === 'video' && coveredTitles.has(normalizeTitle(titleFromFilename(filename)))) {
       return; // already represented by its YouTube entry above — don't also bundle the raw file
     }
-    const item = { file: filename, type, src: modules[path] };
+    const item = { file: filename, id: path, type, src: modules[path] };
     if (/autoplay|auto_play/i.test(path)) autoplayMedia.push(item);
     else gridMedia.push(item);
   });

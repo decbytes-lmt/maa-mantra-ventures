@@ -35,7 +35,7 @@ export default function MMVHeroCanvas() {
     { l1: 'Events That,', l2: 'Move People' },
   ];
 
-  const CONTACT_INFO = { l1: '890 401 1860', l2: 'maamantraventures@gmail.com' };
+  const CONTACT_INFO = { l1: '+91 89040 11860', l2: 'maamantraventures@gmail.com' };
   const ADDRESS_INFO = { l1: 'Yenepoya Mall, Mallikatte,', l2: 'Kadri Road, Mangaluru 575003' };
 
   function getBackContent() {

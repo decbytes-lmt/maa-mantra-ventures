@@ -1,24 +1,31 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
-import HeroWavesBg from '../components/HeroWavesBg';
+import fireIntroVideo from '../assets/fire_intro.mp4';
 import useSEO from '../hooks/useSEO';
 import { titleFromFilename } from '../utils/titleFromFilename';
 import './Home.css';
 import './ServiceDetail.css';
 
 export default function ServiceDetail({ data }) {
-  const { eyebrow, title, accent, intro, heroIcon, features, process, mediaAutoplay, mediaGrid, faqs, otherServices } = data;
+  const { eyebrow, title, accent, intro, heroIcon, features, process, mediaAutoplay, mediaGrid, faqs, otherServices, seoTitle, seoDescription } = data;
   useSEO(
-    `${title} ${accent} | Maa Mantra Ventures`,
-    typeof intro === 'string' ? intro.slice(0, 160) : `${eyebrow} services by Maa Mantra Ventures, Mangalore.`
+    seoTitle || `${title} ${accent} | Maa Mantra Ventures`,
+    seoDescription || (typeof intro === 'string' ? intro.slice(0, 160) : `${eyebrow} services by Maa Mantra Ventures, Mangalore.`)
   );
 
   return (
     <div className="page-enter">
       <section className="svc-hero">
         <div className="svc-hero-glow" />
-        <HeroWavesBg />
+        <video
+          className="svc-hero-video-bg"
+          src={fireIntroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
         <div className="container svc-hero-inner">
           <Reveal>
             <Link to="/" className="svc-breadcrumb">
@@ -100,7 +107,7 @@ export default function ServiceDetail({ data }) {
             {mediaAutoplay?.length > 0 && (
               <div className="svc-autoplay-row">
                 {mediaAutoplay.map((m, i) => (
-                  <Reveal key={m.file} delay={Math.min(i + 1, 4)} className="reveal-scale">
+                  <Reveal key={m.id || m.file} delay={Math.min(i + 1, 4)} className="reveal-scale">
                     <AutoplayVideo item={m} title={m.title || titleFromFilename(m.file)} />
                   </Reveal>
                 ))}
@@ -110,7 +117,7 @@ export default function ServiceDetail({ data }) {
             {mediaGrid?.length > 0 && (
               <div className="svc-media-masonry">
                 {mediaGrid.map((m, i) => (
-                  <Reveal key={m.file} delay={Math.min(i + 1, 4)} className="reveal-scale">
+                  <Reveal key={m.id || m.file} delay={Math.min(i + 1, 4)} className="reveal-scale">
                     <MediaCard item={m} />
                   </Reveal>
                 ))}
@@ -356,10 +363,37 @@ function MediaCard({ item }) {
 
   return (
     <div className="svc-media-natural">
-      <img src={item.src} alt={title} loading="lazy" />
+      <RetryImage src={item.src} alt={title} />
       <span>{title}</span>
     </div>
   );
+}
+
+// Self-healing <img>: shared hosting / browser connection limits can randomly
+// fail a handful of image requests on a busy grid (mostly desktop, where many
+// more images enter the lazy-load viewport at once than on mobile's single
+// column). Instead of making the visitor refresh the page, silently retry the
+// failed request a few times with a short, increasing delay.
+function RetryImage({ src, alt, maxRetries = 4 }) {
+  const [attempt, setAttempt] = useState(0);
+  const [failed, setFailed] = useState(false);
+
+  const handleError = () => {
+    if (attempt < maxRetries) {
+      const delay = 400 * (attempt + 1); // 400ms, 800ms, 1200ms, 1600ms
+      setTimeout(() => setAttempt((a) => a + 1), delay);
+    } else {
+      setFailed(true);
+    }
+  };
+
+  if (failed) return null; // give up quietly after retries exhausted, rather than showing a broken-image icon
+
+  // cache-bust only from the 2nd attempt on, so the very first request is left
+  // untouched (keeps normal browser caching for the common, successful case)
+  const attemptSrc = attempt === 0 ? src : `${src}${src.includes('?') ? '&' : '?'}retry=${attempt}`;
+
+  return <img key={attempt} src={attemptSrc} alt={alt} loading="lazy" decoding="async" onError={handleError} />;
 }
 
 function FaqItem({ q, a }) {

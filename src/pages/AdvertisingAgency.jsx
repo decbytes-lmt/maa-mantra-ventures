@@ -12,6 +12,8 @@ const data = {
   eyebrow: 'Advertising Agency',
   title: 'Campaigns Built to',
   accent: 'Move the Market',
+  seoTitle: 'Best Advertising Agency in Mangalore | Maa Mantra Ventures',
+  seoDescription: 'Maa Mantra Ventures is a full-service advertising agency in Mangalore — strategy, creative and media buying built into one connected campaign.',
   intro:
     'Full-service advertising — strategy, creative and media buying — built as one connected campaign that gets your brand seen, remembered and chosen.',
   heroIcon,

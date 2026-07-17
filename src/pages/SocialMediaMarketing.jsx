@@ -19,6 +19,8 @@ const data = {
   eyebrow: 'Social Media Marketing',
   title: 'Content That Builds',
   accent: 'Real Brand Presence',
+  seoTitle: 'Social Media Marketing Agency in Mangalore | Maa Mantra Ventures',
+  seoDescription: 'Maa Mantra Ventures is a social media marketing agency in Mangalore — content, ads and community growth that turns followers into customers.',
   intro:
     'Strategy-led social media management — content, ads and community growth — built to turn followers into customers.',
   heroIcon,
